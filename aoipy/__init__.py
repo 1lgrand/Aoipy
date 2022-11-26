@@ -1,2 +1,4 @@
-"Discordpy but for dummies to help them get better at coding"
-from .aoi import send, run, embed, wait
+from .Users import *
+from .messages import *
+from .BotUser import *
+from .Channels import *
