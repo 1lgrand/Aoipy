@@ -1,4 +1,4 @@
-# AoiPy - Pycord made simple for learning
+# AoiPy - Pycord made simple (By being very specific) for learning
 Latest Update: 11/26/22
 #### Version: 0.5.0
 ### Using AoiPy
