@@ -2,6 +2,7 @@ import asyncio
 import discord
 global bots
 
+# Random Functions here for testing
 
 async def wait(ctx, types: str, check=None, timer=60, everyone: bool = False):
     global bots
