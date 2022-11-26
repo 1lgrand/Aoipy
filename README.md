@@ -5,9 +5,7 @@ Latest Update: 11/26/22
 1 - `pip install AoiPy`
 
 2 -
-
 ```python
-from aoipy import *
 from aoipy.BotUser import client
 from aoipy.Users import Users
 ```
@@ -15,23 +13,20 @@ from aoipy.Users import Users
 3 -  Example:
 
 ```python
-from aoipy import *
 from aoipy.BotUser import client
-from aoipy.Users import Users
 from aoipy.messages import messageable as ms
-
 # ---------------Imports--------------------
-act = client.activity("tv with friends", "watching")
+act = client.activity("tv", "watching")
 bot = client.Bot(prefix="!", case_insensitive=False, intents=("all",), activity=act)
 
 
 @bot.command()
 async def cool(ctx):
-    lol = await send(ctx, f"{Users.getMention(ctx.author)} is so cool!")
-    await ms.deleteMessage(lol, 5)
+    lol = await ms.sendChannelMessage(ctx, f"This command invoked in...")
+    await ms.sendChannelMessage(ctx, ms.getMessageChannelName(lol))
 
 
-run(bot, "*******<<TOKEN>>***********", f"Started on {bot.user}")
+client.run(bot, "*******<<TOKEN>>***********", f"Started on {bot.user}")
 ```
 
 ## New and still a work in progress
