@@ -14,7 +14,7 @@ from aoipy.Users import Users
 
 ```python
 from aoipy.BotUser import client
-from aoipy.messages import messageable as ms
+from aoipy.Messages import messageable as ms
 # ---------------Imports--------------------
 act = client.activity("tv", "watching")
 bot = client.Bot(prefix="!", case_insensitive=False, intents=("all",), activity=act)

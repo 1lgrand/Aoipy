@@ -30,6 +30,11 @@ async def sendAuthorDM(ctx, message, delete_after: int or float = None, embed: b
         return await ctx.author.send(embed=message)
 
 
+def mentionedUsers(ctx):
+    message = ctx.message
+    return message.mentions
+
+
 def createEmbed(title, description, color=None):
     return discord.Embed(title=title, description=description, color=color)
 
