@@ -1,6 +1,6 @@
 # AoiPy - Pycord made simple (By being very specific) for learning
 Latest Update: 11/26/22
-#### Version: 0.6.12
+#### Version: 0.6.20
 ### Using AoiPy
 1 - `pip install AoiPy`
 
