@@ -1,3 +1,5 @@
+![aoipy](https://github.com/LilbabxJJ-1/Aoipy/blob/master/aoipy/AOIpy%20(1).png)
+
 # AoiPy - Pycord made simple (By being very specific) for learning
 Latest Update: 11/26/22
 #### Version: 0.6.20
