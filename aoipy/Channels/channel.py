@@ -30,7 +30,7 @@ def getVoiceChannelName(id: discord.VoiceChannel) -> discord.VoiceChannel.name:
     return id.name
 
 # This method returns a boolean value, to check if a channel is NSFW (Not Safa For Work) or not
-def getNSFW(ID: discord.TextChannel) -> discord.TextChannel.id:
+def getNSFW(ID: discord.TextChannel):
     return ID.nsfw
 
 # The number of seconds a member must wait between sending messages
@@ -44,4 +44,7 @@ def setNSFW(ID: discord.TextChannel, value: bool) -> discord.TextChannel.id:
 
 #With this method is possible to change the Text channel name
 def setTextChannelName(ID: discord.TextChannel, newName) -> discord.TextChannel.name:
+    ID.name = newName
+
+def setVoiceChannelName(ID: discord.VoiceChannel, newName) -> discord.VoiceChannel.name:
     ID.name = newName
