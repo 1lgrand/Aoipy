@@ -25,7 +25,7 @@ def Bot(prefix: str, case_insensitive: bool = False, intents: tuple = ("default"
     return clients
 
 
-def run(bot, token: str, startMessage: str = None, intents: str = "all"):
+def run(bot, token: str, startMessage: str = None):
     global bots
     bots = bot
 
