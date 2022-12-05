@@ -16,5 +16,6 @@ def getUserCreationDate(user: discord.User):
 def getUserID(user: discord.User):
     return user.id
 
+
 def getUserMention(user: discord.User):
     return user.mention
