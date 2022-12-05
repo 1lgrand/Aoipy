@@ -43,6 +43,10 @@ def getMessageID(message: discord.Message):
     return message.id
 
 
+def getMessageAuthor(message: discord.Message):
+    return message.author
+
+
 def getMessageContent(message: discord.Message):
     return message.content
 
