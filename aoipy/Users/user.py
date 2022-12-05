@@ -1,21 +1,20 @@
 import discord
-from discord.ext import commands
 
 
-def getName(user: discord.User):
+def getUserName(user: discord.User):
     return user.name
 
 
-def getDescriminator(user: discord.User):
+def getUserDescriminator(user: discord.User):
     return user.discriminator
 
 
-def getCreationDate(user: discord.User):
+def getUserCreationDate(user: discord.User):
     return user.created_at
 
 
-def getID(user: discord.User):
+def getUserID(user: discord.User):
     return user.id
 
-def getMention(user: discord.User):
+def getUserMention(user: discord.User):
     return user.mention

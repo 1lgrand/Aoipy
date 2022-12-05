@@ -8,6 +8,13 @@ async def banMember(member: discord.Member, reason: str = None):
         return await member.ban(reason=reason)
 
 
+async def kickMember(member: discord.Member,reason: str = None):
+    if reason is None:
+        return await member.kick()
+    else:
+        return await member.kick(reason=reason)
+
+
 def getNick(member: discord.Member):
     return member.display_name
 

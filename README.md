@@ -1,29 +1,29 @@
-# AoiPy - Pycord made simple (By being very specific) for learning
-Latest Update: 11/26/22
-#### Version: 0.6.20
+# AoiPy - Discord.py made simple (By being very specific) for learning
+Latest Update: 12/05/22
+#### Version: 0.8.20
 ### Using AoiPy
 1 - `pip install AoiPy`
 
-2 -
+2 - Import Client and any other files
 ```python
 from aoipy.BotUser import client
-from aoipy.Users import Users
+from aoipy.File import * 
 ```
 
 3 -  Example:
 
 ```python
 from aoipy.BotUser import client
-from aoipy.Messages import messageable as ms
+from aoipy.Messages import *
+from aoipy.Channels import *
 # ---------------Imports--------------------
 act = client.activity("tv", "watching")
 bot = client.Bot(prefix="!", case_insensitive=False, intents=("all",), activity=act)
 
 
 @bot.command()
-async def cool(ctx):
-    lol = await ms.sendChannelMessage(ctx, f"This command invoked in...")
-    await ms.sendChannelMessage(ctx, ms.getMessageChannelName(lol))
+async def where(ctx):
+    await sendChannelMessage(ctx, f"This command invoked in...{getCurrentTextChannel(ctx)}")
 
 
 client.run(bot, "*******<<TOKEN>>***********", f"Started on {bot.user}")

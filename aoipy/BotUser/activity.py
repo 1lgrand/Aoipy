@@ -9,7 +9,7 @@ def activity(text: str, type: str = "Watching"):
     elif type.lower() == "listening":
         activities = discord.Activity(type=discord.ActivityType.listening, name=text)
     else:
-        raise SyntaxError("No TYPE selected")
+        raise SyntaxError("No TYPE selected for bot activity")
     return activities
 
 
@@ -23,7 +23,7 @@ async def updateActivity(text: str, type: str = "watching"):
 
 
     """
-    from aoipy.aoi import bots
+    from aoipy.BotUser.core import bots
     if type.lower() == "watching":
         newAct = await bots.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=text))
     elif type.lower() == "playing":
