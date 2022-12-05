@@ -14,10 +14,6 @@ def textChannelID(Name: discord.TextChannel) -> discord.TextChannel.id:
     return Name.id
 
 
-def textChannel():
-    pass
-
-
 def getCurrentTextChannel(ctx: commands.Context.channel) -> commands.Context:
     return ctx
 
