@@ -1,4 +1,4 @@
-# AoiPy - Discord.py made simple (By being very specific) for learning
+# AoiPy - Discord.py made simple
 Latest Update: 12/05/22
 #### Version: 0.8.30
 ![AoiPY](https://github.com/LilbabxJJ-1/Aoipy/blob/master/aoipy/AOIpy%20(1).png)
