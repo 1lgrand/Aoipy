@@ -21,13 +21,17 @@ from aoipy.Channels import *
 act = client.activity("tv", "watching")
 bot = client.Bot(prefix="!", case_insensitive=False, intents=("all",), activity=act)
 
+@client.onReady
+def startup():
+    print(f"{bot.user} is ready!")
+    
 
 @bot.command()
-async def where(ctx):
-    await sendChannelMessage(ctx, f"This command invoked in...{getCurrentTextChannel(ctx)}")
+async def ping(ctx):
+    await sendChannelMessage(ctx, "Pong!")
 
 
-client.run(bot, "*******<<TOKEN>>***********", f"Started on {bot.user}")
+client.run("*******<<TOKEN>>***********")
 ```
 
 ## New and still a work in progress
