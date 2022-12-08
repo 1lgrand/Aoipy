@@ -1,6 +1,12 @@
 # AoiPy - Discord.py made simple
 Latest Update: 12/07/22
-#### Version: 0.9.1
+
+![PyPI](https://img.shields.io/pypi/v/aoipy)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/aoipy?color=green&label=downloads)
+![Downloads](https://static.pepy.tech/personalized-badge/aoipy?period=total&units=international_system&left_color=grey&right_color=green&left_text=downloads)
+![PyPI - License](https://img.shields.io/pypi/l/aoipy)
+![](https://tokei.rs/b1/github/tomschimansky/aoipy)
+
 ![AoiPY](https://github.com/LilbabxJJ-1/Aoipy/blob/master/aoipy/AOIpy%20(1).png)
 ### Using AoiPy
 1 - `pip install AoiPy`
@@ -39,4 +45,14 @@ async def ping(ctx):
 bot.run("*******<<TOKEN>>***********")
 ```
 
+Bare Minimum bot
+```python
+from aoipy.Client import *
+bot = client.Bot(prefix="!", intents=("all",))
+events = client.Events()
+
+@events.onReady
+def startup():
+    print(f"{bot.user} is ready!")
+```
 ## New and still a work in progress
