@@ -7,5 +7,5 @@ bot = client.Bot(prefix="!")
 
 @bot.command()
 async def ban(ctx, member: aoipy.Member):
-    await banMember(member, "For bein TOO cool!")
+    await banMember(member, "For being cool")
     await sendChannelMessage(ctx, f"{member} has been banned!")

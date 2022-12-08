@@ -43,7 +43,6 @@ class Start(discord.Client):
         global bots
         bots.run(token)
 
-
     # Random Functions here for testing
     async def wait(self, ctx, types: str, check=None, timer=60, everyone: bool = False):
         global bots

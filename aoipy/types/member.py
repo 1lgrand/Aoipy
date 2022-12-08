@@ -1,30 +1,34 @@
 import discord
 
 
-class Member:
-    async def banMember(self, member: discord.Member, reason: str = None):
+class Member():
+    def __init__(self, member):
+        self.member = member
+
+
+    async def banMember(self, reason: str = None):
         if reason is None:
-            return await member.ban()
+            return await self.member.ban()
         else:
-            return await member.ban(reason=reason)
+            return await self.member.ban(reason=reason)
 
-    async def kickMember(self, member: discord.Member, reason: str = None):
+    async def kickMember(self, reason: str = None):
         if reason is None:
-            return await member.kick()
+            return await self.member.kick()
         else:
-            return await member.kick(reason=reason)
+            return await self.member.kick(reason=reason)
 
-    def getNick(self, member: discord.Member):
-        return member.display_name
+    def getNick(self):
+        return self.member.display_name
 
-    def getRoles(self, member: discord.Member):
-        return member.roles
+    def getRoles(self):
+        return self.member.roles
 
-    def getJoinDate(self, member: discord.Member):
-        return member.joined_at
+    def getJoinDate(self):
+        return self.member.joined_at
 
-    def sendMessage(self, user: discord.User, message, embed: bool = False):
+    def sendMessage(self, message, embed: bool = False):
         if embed:
-            user.send(embed=message)
+            self.member.send(embed=message)
         else:
-            user.send(message)
+            self.member.send(message)
