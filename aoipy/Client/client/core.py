@@ -142,6 +142,7 @@ class Events:
             Func(*args, **kwargs)
 
         return Func
+# Still adding more events
 
 
 def Bot(prefix: str, case_insensitive: bool = False, intents: tuple = ("default",), activity=None, help_command=None):
