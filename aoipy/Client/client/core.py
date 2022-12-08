@@ -1,12 +1,11 @@
 import discord
 from discord.ext import commands
 import asyncio
-
 global bots
 
 
 class Start(discord.Client):
-    def __init__(self, prefix: str, case_insensitive: bool = False, intents: tuple = ("default",), activity=None, help_command=None, **options):
+    def __init__(self, prefix: str, case_insensitive: bool = False, intents: tuple = ("default",), activity=None, help_command=None):
         global bots
         self.prefix = prefix
         self.case_insensitive = case_insensitive
@@ -33,7 +32,6 @@ class Start(discord.Client):
                                          help_command=self._help_command)
             bots = self._clients
 
-
         else:
             self._clients = commands.Bot(command_prefix=self.prefix, case_insensitive=self.case_insensitive, intents=self.intent,
                                          activity=self._activity,
@@ -44,6 +42,7 @@ class Start(discord.Client):
     def run(self, token: str):
         global bots
         bots.run(token)
+
 
     # Random Functions here for testing
     async def wait(self, ctx, types: str, check=None, timer=60, everyone: bool = False):
@@ -146,6 +145,10 @@ class Events:
 
 
 def Bot(prefix: str, case_insensitive: bool = False, intents: tuple = ("default",), activity=None, help_command=None):
-    l = Start(prefix, case_insensitive, intents, activity, help_command)
-    working = l.clients
+    _final = Start(prefix, case_insensitive, intents, activity, help_command)
+    working = _final.clients
+    from aoipy.Client.BotUser import loadBotItems
+    from .activity import loadActivity
+    loadActivity(working)
+    loadBotItems(working)
     return working

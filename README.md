@@ -1,6 +1,6 @@
 # AoiPy - Discord.py made simple
 Latest Update: 12/07/22
-#### Version: 0.9.0
+#### Version: 0.9.1
 ![AoiPY](https://github.com/LilbabxJJ-1/Aoipy/blob/master/aoipy/AOIpy%20(1).png)
 ### Using AoiPy
 1 - `pip install AoiPy`
@@ -17,7 +17,7 @@ from aoipy.File import *
 
 ```python
 
-from aoipy.Client import client
+from aoipy.Client import *
 from aoipy.Messages import *
 from aoipy.Channels import *
 

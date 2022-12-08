@@ -1,5 +1,13 @@
 import discord
 
+global client
+
+
+def loadActivity(Bots):
+    global client
+    client = Bots
+
+
 
 def activity(text: str, type: str = "Watching"):
     if type.lower() == "watching":
@@ -23,13 +31,12 @@ async def updateActivity(text: str, type: str = "watching"):
 
 
     """
-    from aoipy.BotUser.client.core import bots
     if type.lower() == "watching":
-        newAct = await bots.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=text))
+        newAct = await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=text))
     elif type.lower() == "playing":
-        newAct = await bots.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=text))
+        newAct = await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=text))
     elif type.lower() == "listening":
-        newAct = await bots.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=text))
+        newAct = await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=text))
     else:
         raise SyntaxError("No TYPE Selected")
     return newAct
