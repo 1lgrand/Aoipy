@@ -1,4 +1,4 @@
 from .Users import *
 from .Messages import *
-from .BotUser import *
+from .Client import *
 from .Channels import *

@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     # Here is the module name.
     name="AoiPy",
-    version="0.8.30",
+    version="0.9.0",
     author="Jade",
     description="Pycord made simple for learning",
     long_description=long_description,

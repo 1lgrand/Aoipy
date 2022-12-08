@@ -23,7 +23,7 @@ async def updateActivity(text: str, type: str = "watching"):
 
 
     """
-    from aoipy.BotUser.core import bots
+    from aoipy.BotUser.client.core import bots
     if type.lower() == "watching":
         newAct = await bots.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=text))
     elif type.lower() == "playing":
