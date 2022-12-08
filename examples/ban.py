@@ -1,10 +1,11 @@
-from aoipy.BotUser import client
-from aoipy.Messages import messageable as ms
-from aoipy.Users import member as mb
+import aoipy
+from aoipy.Client import *
+from aoipy.Messages import *
+from aoipy.Users import *
 bot = client.Bot(prefix="!")
 
 
 @bot.command()
-async def ban(ctx):
-    await mb.banMember(ctx.author, "For bein TOO cool!")
-    await ms.sendChannelMessage(ctx, f"{ctx.author} has been banned!")
+async def ban(ctx, member: aoipy.Member):
+    await banMember(member, "For bein TOO cool!")
+    await sendChannelMessage(ctx, f"{member} has been banned!")
