@@ -45,4 +45,14 @@ async def ping(ctx):
 bot.run("*******<<TOKEN>>***********")
 ```
 
+Bare Minimum bot
+```python
+from aoipy.Client import *
+bot = client.Bot(prefix="!", intents=("all",))
+events = client.Events()
+
+@events.onReady
+def startup():
+    print(f"{bot.user} is ready!")
+```
 ## New and still a work in progress
