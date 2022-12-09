@@ -34,7 +34,7 @@ events = client.Events()
 
 @events.onReady
 def startup():
-    print(f"{bot.user} is ready!")
+    print(f"{botUserName()} is ready!")
 
 
 @bot.command()
@@ -53,6 +53,6 @@ events = client.Events()
 
 @events.onReady
 def startup():
-    print(f"{bot.user} is ready!")
+    print(f"{botUserName()} is ready!")
 ```
 ## New and still a work in progress
