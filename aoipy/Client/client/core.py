@@ -147,7 +147,7 @@ class Events:
 def Bot(prefix: str, case_insensitive: bool = False, intents: tuple = ("default",), activity=None, help_command=None):
     _final = Start(prefix, case_insensitive, intents, activity, help_command)
     working = _final.clients
-    from aoipy.Client.BotUser import loadBotItems
+    from aoipy.Client.client.BotUser import loadBotItems
     from .activity import loadActivity
     loadActivity(working)
     loadBotItems(working)

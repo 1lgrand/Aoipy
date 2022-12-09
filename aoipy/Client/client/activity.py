@@ -1,12 +1,11 @@
 import discord
 
-global client
+global clients
 
 
 def loadActivity(Bots):
-    global client
-    client = Bots
-
+    global clients
+    clients = Bots
 
 
 def activity(text: str, type: str = "Watching"):
@@ -32,11 +31,11 @@ async def updateActivity(text: str, type: str = "watching"):
 
     """
     if type.lower() == "watching":
-        newAct = await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=text))
+        newAct = await clients.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=text))
     elif type.lower() == "playing":
-        newAct = await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=text))
+        newAct = await clients.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=text))
     elif type.lower() == "listening":
-        newAct = await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=text))
+        newAct = await clients.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=text))
     else:
         raise SyntaxError("No TYPE Selected")
     return newAct

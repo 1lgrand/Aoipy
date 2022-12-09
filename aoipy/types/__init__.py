@@ -1,1 +1,2 @@
-from member import *
+from .member import *
+from .channels import *
