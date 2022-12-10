@@ -1,12 +1,11 @@
 import discord
+from discord.ext import commands
 
+class Member:
+    def __init__(self, member: discord.Member):
+        self.member = commands.MemberConverter().convert(member)
 
-class Member():
-    def __init__(self, member):
-        self.member = member
-
-
-    async def banMember(self, reason: str = None):
+    async def banMember(self, reason: str = None) -> discord.Member.ban:
         if reason is None:
             return await self.member.ban()
         else:
@@ -29,6 +28,6 @@ class Member():
 
     def sendMessage(self, message, embed: bool = False):
         if embed:
-            self.member.send(embed=message)
+            return self.member.send(embed=message)
         else:
-            self.member.send(message)
+            return self.member.send(message)
