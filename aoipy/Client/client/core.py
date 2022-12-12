@@ -39,31 +39,11 @@ class Start(discord.Client):
             bots = self._clients
         super().__init__(intents=self.intent)
 
-    def run(self, token: str):
-        global bots
-        bots.run(token)
 
+    #def runs(self, token: str):
+        #global bots
+        #bots.run(token)
     # Random Functions here for testing
-    async def wait(self, ctx, types: str, check=None, timer=60, everyone: bool = False):
-        global bots
-        timeout = "ASYNCIO TIMEOUT ERROR"
-        if check is None:
-            try:
-                if everyone is False:
-                    def check(msg):
-                        if msg.author == ctx.author:
-                            return True
-
-                    return await bots.wait_for(types.lower(), check=check, timeout=timer)
-                else:
-                    return await bots.wait_for(types.lower(), timeout=timer)
-            except asyncio.TimeoutError:
-                raise TimeoutError(timeout)
-        else:
-            try:
-                return await bots.wait_for(types.lower(), check=check, timeout=timer)
-            except asyncio.TimeoutError:
-                return TimeoutError(timeout)
 
     @property
     def clients(self):
@@ -124,6 +104,15 @@ class Events:
 
         return Func
 
+    def onAutoModActionExecute(self, Func):
+        @bots.event
+        async def on_auto_moderation_action_execution(*args, **kwargs):
+            Func(*args, **kwargs)
+        return Func
+
+
+
+
     def onReady(self, Func):
         global bots
 
@@ -141,13 +130,15 @@ class Events:
             Func(*args, **kwargs)
 
         return Func
+
+
 # Still adding more events
 
 
 def Bot(prefix: str, case_insensitive: bool = False, intents: tuple = ("default",), activity=None, help_command=None):
     _final = Start(prefix, case_insensitive, intents, activity, help_command)
     working = _final.clients
-    from aoipy.Client.client.BotUser import loadBotItems
+    from .BotUser import loadBotItems
     from .activity import loadActivity
     loadActivity(working)
     loadBotItems(working)
