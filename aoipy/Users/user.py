@@ -1,6 +1,5 @@
 import discord
 
-
 def getUserName(user: discord.User):
     return user.name
 

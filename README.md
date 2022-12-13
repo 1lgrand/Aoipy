@@ -1,5 +1,5 @@
 # AoiPy - Discord.py made simple
-Latest Update: 12/07/22
+Latest Update: 12/13/22
 
 ![PyPI](https://img.shields.io/pypi/v/aoipy)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/aoipy?color=green&label=downloads)
@@ -25,8 +25,7 @@ from aoipy.File import *
 
 from aoipy.Client import *
 from aoipy.Messages import *
-from aoipy.Channels import *
-
+import discord
 # ---------------Imports--------------------
 act = client.activity("tv", "watching")
 bot = client.Bot(prefix="!", case_insensitive=False, intents=("all",), activity=act)
@@ -34,7 +33,7 @@ events = client.Events()
 
 @events.onReady
 def startup():
-    print(f"{botUserName()} is ready!")
+    print(f"{botUsername()} is ready!")
 
 
 @bot.command()
@@ -53,6 +52,6 @@ events = client.Events()
 
 @events.onReady
 def startup():
-    print(f"{botUserName()} is ready!")
+    print(f"{botUsername()} is ready!")
 ```
 ## New and still a work in progress
